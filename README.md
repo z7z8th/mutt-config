@@ -14,19 +14,17 @@ libnotify-bin                         sends desktop notifications to a notificat
 
 
 ## check new mail and send desktop notify
-* \$` crontab -e`
-```
-*/3 * * * * $HOME/.mutt/check-new-mail.sh
-```
+### $` crontab -e`
+> `*/3 * * * * $HOME/.mutt/check-new-mail.sh`
 
 
 ## use getmail to get new mail
-* expamles/msmtprc
+### expamles/msmtprc
 > msmtp is used to send emails from either account via the commandline
 or Mutt.
 
 ## use procmail to filter mails
-* expamles/procmailrc
+### expamles/procmailrc
 > procmail is used to filter mails to different mail dirs
 
 ## Mail query
