@@ -24,21 +24,21 @@ echo "msg_cnt=$msg_cnt"
 x_getmail_log='
 getmail version 4.32.0
 Copyright (C) 1998-2012 Charles Cazabon.  Licensed under the GNU GPL version 2.
-SimpleIMAPRetriever:bob.zhao@ms.infomax.com.tw:143:
-  msg  1/13 (130531 bytes) from <deming.li@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  2/13 (1405 bytes) from <unknown> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  3/13 (35660 bytes) from <bolo.tsai@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  4/13 (35668 bytes) from <bolo.tsai@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  5/13 (35449 bytes) from <bolo.tsai@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  6/13 (156293 bytes) from <bolo.tsai@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  7/13 (6387 bytes) from <jason.wang@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  8/13 (32442 bytes) from <deming.li@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg  9/13 (4570 bytes) from <deming.li@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg 10/13 (7796 bytes) from <peter.gu@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg 11/13 (2378 bytes) from <ybzhao1989@gmail.com> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg 12/13 (1876 bytes) from <bob.zhao@infomax.com.tw> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
-  msg 13/13 (23769 bytes) from <aabbccdd1373@163.com> delivered to Mboxrd /home/z7z8th/Mail/Infomax/Inbox
+SimpleIMAPRetriever:xxxxx@ms.xxxx.com:143:
+  msg  1/13 (130531 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  2/13 (1405 bytes) from <unknown> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  3/13 (35660 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  4/13 (35668 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  5/13 (35449 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  6/13 (156293 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  7/13 (6387 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  8/13 (32442 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg  9/13 (4570 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg 10/13 (7796 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg 11/13 (2378 bytes) from <xxxxx@gmail.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg 12/13 (1876 bytes) from <xxxxx@xxxx.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
+  msg 13/13 (23769 bytes) from <bc33@163.com> delivered to Mboxrd /home/username/Mail/SomeDir/Inbox
   13 messages (474224 bytes) retrieved, 0 skipped
 Summary:
-Retrieved 13 messages (474224 bytes) from SimpleIMAPRetriever:bob.zhao@ms.infomax.com.tw:143
+Retrieved 13 messages (474224 bytes) from SimpleIMAPRetriever:xxxxx@ms.xxxx.com:143
 '
