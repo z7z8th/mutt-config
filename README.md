@@ -2,7 +2,7 @@
 
 ## packages needed by Debian
 * Packages needed
-```
+<pre>
 getmail4                              mail retriever with support for POP3, IMAP4 and SDPS
 procmail                              Versatile e-mail processor
 mutt                                  text-based mailreader supporting MIME, GPG, PGP and threading
@@ -10,12 +10,12 @@ mutt-patched                          Mutt Mail User Agent with extra patches
 mutt-vc-query                         vCard query utility for mutt
 notmuch-mutt                          thread-based email index, search and tagging (Mutt interface)
 libnotify-bin                         sends desktop notifications to a notification daemon (Utilities)
-```
+</pre>
 
 
 ## check new mail and send desktop notify
-* $` crontab -e` *<br>
-```shell
+* \$` crontab -e`
+```
 */3 * * * * $HOME/.mutt/check-new-mail.sh
 ```
 
