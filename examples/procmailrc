@@ -1,0 +1,20 @@
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+SHELL=/bin/sh
+VERBOSE=off
+MAILDIR=$HOME/Mail/
+PMDIR=$HOME/.procmail/
+LOGFILE=$PMDIR/procmail.log
+#INCLUDERC=$PMDIR/rc.maillists
+
+
+:0:
+* ^FROM.*gitosis@git.xxx.com
+Infomax/gerrit/
+
+:0:
+* ^FROM.*@gmail.com
+Infomax/from-gmail/
+
+:0:
+* .*
+Infomax/Inbox/

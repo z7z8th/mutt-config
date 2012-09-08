@@ -3,3 +3,4 @@ cache/*
 temp/*
 aliases
 *.bak
+/off

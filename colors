@@ -1,13 +1,13 @@
 # set default
-  color normal      white         default
+  color normal      black         default
 
 # main colors
   color status      green         default
-  color indicator   brightwhite   default
+  color indicator   magenta   default
   color tree        blue          default
   color error       brightred     default
   color message     brightyellow  default
-  color sidebar     green         default
+#  color sidebar     green         default
   color sidebar_new brightyellow  default
 
 #

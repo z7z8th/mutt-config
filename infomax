@@ -1,0 +1,14 @@
+color status cyan default
+
+  set from      = "bob.zhao@infomax.com.tw"
+  set sendmail  = "/usr/bin/msmtp -a infomax"
+  set mbox      = "+Infomax/AllMails"
+unset record
+  set postponed     = "+Infomax/drafts"
+  set query_command = "mail-query '%s' ~/Mail/Infomax/Inbox"
+
+macro index ,c "<change-folder>+Gmail/Inbox<return>" "change accounts"
+macro index D "<save-message>+Infomax/Trash<enter>" "move message to the trash"
+macro index S "<save-message>+Infomax/Spam<enter>"  "mark message as spam"
+
+# vim: ft=muttrc

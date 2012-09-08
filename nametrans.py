@@ -1,6 +1,6 @@
 import re
 
-mapping = { 'INBOX':              'INBOX'
+mapping = { 'Inbox':              'Inbox'
           , '[Gmail]/All Mail':   'all_mail'
           , '[Gmail]/Drafts':     'drafts'
           , '[Gmail]/Important':  'important'
