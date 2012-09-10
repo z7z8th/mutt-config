@@ -53,7 +53,7 @@ alternative_order text/plain text/enriched text/html              # but save it 
   set alias_format        = "%4n %t %-20a %r"
   set date_format         = "%m/%d/%y at %I:%M%P"
   set forward_format      = "Fwd: %s"                             # format for subject when forwarding
-  set index_format        = "%3C %Z %[!%m/%d] %-17.17F %s"
+  set index_format        = "%3C %Z %[!%d/%m %H:%M] | %-15.15a -> %-15.15t | %s"
   set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
   set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
   set status_format       = "-%r- %v ────────────────┴────/ %f %m%?n? [+%n]?%?d? [-%d]?%?t? [*%t]? /%?p?───/ %p waiting to send /?─%>─(%P)───"
@@ -99,6 +99,8 @@ mailboxes +Infomax             \
           +Infomax/Spam        \
           +Infomax/gerrit      \
           +Infomax/from-gmail  \
+          +Infomax/Cron        \
+
 
 mailboxes +Thunderbird-im           \
           +Thunderbird-im/Inbox     \
@@ -168,7 +170,7 @@ macro index ,V "<collapse-all>"    "collapse/uncollapse all threads"
 # note: with this, you can't use `:q!` mid-compose to abort the message.
 # instead, you should use `:wq` and abort from the compose menu
 unhook send-hook
-# send-hook "~u" "push '<edit-cc>,pbrisbin@gmail.com<return>'"
+# send-hook "~P" "push '<edit-cc>,pbrisbin@gmail.com<return>'"
 send-hook "~P" "push '<edit-cc>,bob.zhao@infomax.com.tw<return>'"
 
 # vim: ft=muttrc
