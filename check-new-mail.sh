@@ -1,5 +1,11 @@
 #!/bin/sh
 
+dbus_session_file=~/.dbus/session-bus/$(cat /var/lib/dbus/machine-id)-0
+if [ -e "$dbus_session_file" ]; then
+  . "$dbus_session_file"
+  export DBUS_SESSION_BUS_ADDRESS DBUS_SESSION_BUS_PID
+fi
+
 getmail_log=`getmail -n 2>/dev/null`
 echo $getmail_log
 from_list=`echo $getmail_log | grep -Eo 'from <[[:alnum:]._-]+@[[:alnum:]._-]+>'`
@@ -7,7 +13,7 @@ msg_cnt=`echo $getmail_log | grep -Eo '[[:digit:]]+ messages \([[:digit:]]+ byte
 echo
 echo "from_list=$from_list"
 echo "msg_cnt=$msg_cnt"
-[ "$msg_cnt" -gt 0 ] && notify-send -u normal "$msg_cnt new messages.$from_list"
+[ "${msg_cnt:-0}" -gt 0 ] && notify-send -u normal "$msg_cnt new messages.$from_list"
 
 
 
