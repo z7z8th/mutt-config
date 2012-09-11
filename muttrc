@@ -43,6 +43,7 @@ unset sort_re                                                     # always threa
 unset wait_key                                                    # don't show "Press any key to continue"
   set charset             = "utf-8"
   set assumed_charset     = "utf-8:gb2312:big5"
+  set file_charset        = "utf-8:gb2312:big5:iso-8859-1"
   set sig_on_top          = yes
 
 # enriched messages
@@ -156,7 +157,7 @@ bind index,pager O sidebar-open
 # macros
 macro index ,i "<change-folder>!<return>" "go to inbox"
 macro index ,p "<pipe-message>cat > ~/" "save message as"
-macro index ,z "<shell-escape>offlineimap -q -o<return>" "sync IMAP"
+macro index ,z "<shell-escape>getmail -n -q<return>" "sync IMAP"
 macro index ,r "<tag-pattern>all<return><tag-prefix><clear-flag>N<untag-pattern>all<return>" "mark all as read"
 macro index ,R "<collapse-all><tag-pattern>all<return><tag-prefix><clear-flag>N<untag-pattern>all<return><collapse-all>" "mark all as read (collapsed)"
 macro index ,v "<collapse-thread>" "collapse/uncollapse thread"
@@ -172,5 +173,24 @@ macro index ,V "<collapse-all>"    "collapse/uncollapse all threads"
 unhook send-hook
 # send-hook "~P" "push '<edit-cc>,pbrisbin@gmail.com<return>'"
 send-hook "~P" "push '<edit-cc>,bob.zhao@infomax.com.tw<return>'"
+
+### use abook with mutt, already added in /etc/Muttrc.d/abook.rc
+set query_command       = "abook --mutt-query '%s'"
+macro generic,index,pager \Ca "<shell-escape>abook<return>" "launch abook"
+# macro index,pager A "<pipe-message>abook --add-email<return>" "add the sender address to abook"
+### bind ; to  Ctrl-t in editor-mode (easier IMO)
+# macro editor ";" \Ct
+
+# attachments
+macro attach W <save-entry><kill-line>/home/gawron/attachments/
+macro attach E <save-entry><kill-line>/home/gawron/attachments/<enter>
+mime_lookup application/octet-stream
+set mime_forward=yes
+set mime_forward_rest=yes
+
+# rfc2047 is deprecated (was superseded by rfc2231), but M$ Outlook use rfc2047
+# mutt can not send incorrect messages, but can read incorrect messages
+# i'll send attachments in english names
+set rfc2047_parameters
 
 # vim: ft=muttrc
