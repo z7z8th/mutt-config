@@ -2,7 +2,8 @@
 
 # directories and commands
   set alias_file          = ~/.mutt/aliases                       # alias file
-  set mailcap_path        = ~/.mutt/mailcap                       # entrys for filetypes
+  set mailcap_path        = ~/.mutt/mailcap:/usr/local/etc/mailcap:/etc/mailcap
+                                                                  # mailcap, entrys for filetypes
   set signature           = ~/.mutt/signature                     # my signature file
   set tmpdir              = ~/.mutt/temp                          # where to keep temp files
   set editor              = "vim +:silent+?^$"                    # use vim and skip to last blank line
@@ -157,7 +158,7 @@ bind index,pager O sidebar-open
 # macros
 macro index ,i "<change-folder>!<return>" "go to inbox"
 macro index ,p "<pipe-message>cat > ~/" "save message as"
-macro index ,z "<shell-escape>getmail -n -q<return>" "sync IMAP"
+macro index ,z "<shell-escape>getmail -n<return>" "sync IMAP"
 macro index ,r "<tag-pattern>all<return><tag-prefix><clear-flag>N<untag-pattern>all<return>" "mark all as read"
 macro index ,R "<collapse-all><tag-pattern>all<return><tag-prefix><clear-flag>N<untag-pattern>all<return><collapse-all>" "mark all as read (collapsed)"
 macro index ,v "<collapse-thread>" "collapse/uncollapse thread"
