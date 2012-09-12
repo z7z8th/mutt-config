@@ -1,6 +1,7 @@
-application/octet-stream ; echo %s "can be anything..."                    ; copiousoutput
-text/html                ; /usr/bin/w3m -dump %s ; nametemplate=%s.html ; copiousoutput
-application/pdf          ; /usr/bin/zathura %s                             ; copiousoutput
+application/octet-stream ; pcmanfm %s                                      ; copiousoutput
+text/html                ; /usr/bin/w3m -dump %s ; nametemplate=%s.html    ; copiousoutput
+application/pdf          ; /usr/bin/evince %s                              ; copiousoutput
 image/*                  ; /usr/bin/mirage %s                              ; copiousoutput
-audio/*                  ; ~/.bin/playnow %s                               ; copiousoutput
-video/*                  ; /usr/bin/mplayer %s                             ; copiousoutput
+audio/*                  ; /usr/bin/smplayer %s                            ; copiousoutput
+video/*                  ; /usr/bin/smplayer %s                            ; copiousoutput
+
