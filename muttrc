@@ -13,7 +13,6 @@
 # maildir settings
   set mbox_type           = Maildir                               # mailbox type
   set folder              = ~/Mail                                # mailbox location
-  set postponed           = "+Infomax/Draft"                      # where postponed msgs go
   # set spoolfile           = "+Gmail/Inbox"                        # Gmail is default inbox
   set spoolfile           = "+Infomax/Inbox"                      # Infomax is default inbox
   # set nm_default_uri      = "notmuch:///home/z7z8th/Mail"         # notmuch uri
@@ -112,7 +111,6 @@ mailboxes +Thunderbird-im           \
 
 mailboxes /var/mail/z7z8th       \
           ~/mbox                 \
-
 
 source $alias_file                                                # required for functionality
 #source ~/.mutt/colors
