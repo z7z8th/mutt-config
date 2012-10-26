@@ -19,6 +19,7 @@
 
 # main options
   set beep_new                                                    # terminal bell on new message
+unset beep
 unset confirmappend                                               # don't ask, just do
   set delete                                                      # don't ask, just do
   set mail_check          = 0                                     # minimum time between scans
@@ -31,7 +32,7 @@ unset mark_old                                                    # read/new is 
   set pipe_decode                                                 # strip headers and eval mimes when piping
   set reverse_alias                                               # show names from alias file in index
   set sidebar_visible     = yes
-  set sidebar_width       = 35
+  set sidebar_width       = 30
   set sidebar_delim       = '│'
   set sort                = threads                               # like gmail
   set sort_aux            = reverse-last-date-received            # like gmail
@@ -56,7 +57,7 @@ alternative_order text/plain text/enriched text/html              # but save it 
   set forward_format      = "Fwd: %s"                             # format for subject when forwarding
   set index_format        = "%3C %Z %[!%d/%m %H:%M] | %-15.15a -> %-15.15t | %s"
   set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-  set reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+  set reply_regexp        = "^((([Rr][Ee]|答复)?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
   set status_format       = "-%r- %v ────────────────┴────/ %f %m%?n? [+%n]?%?d? [-%d]?%?t? [*%t]? /%?p?───/ %p waiting to send /?─%>─(%P)───"
 
 # composing mail
@@ -65,9 +66,11 @@ alternative_order text/plain text/enriched text/html              # but save it 
   set fast_reply                                                  # skip to compose when replying
   set forward_quote                                               # include message in forwards
   set include                                                     # include message in replies
-  set realname            = "Bob.Zhao"                     # who am i?
-  set reply_to                                                    # reply to Reply-to: field, not From:
-  set reverse_name                                                # reply as who it was sent to (see alternates)
+  set reply_to            = ask-yes                               # reply to Reply-to: field, not From:
+  set reply_self                                                  # include myself when replying to a goroup
+unset reverse_name                                                # don't reply as who it was sent to (see alternates)
+  set honor_followup_to   = yes
+  set metoo               = yes                                   # add myself to the recipients list
 
 # headers to show
 ignore *                                                          # ignore all headers
@@ -169,9 +172,9 @@ macro index ,V "<collapse-all>"    "collapse/uncollapse all threads"
 #
 # note: with this, you can't use `:q!` mid-compose to abort the message.
 # instead, you should use `:wq` and abort from the compose menu
-unhook send-hook
+#unhook send-hook
 # send-hook "~P" "push '<edit-cc>,pbrisbin@gmail.com<return>'"
-send-hook "~P" "push '<edit-cc>,bob.zhao@infomax.com.tw<return>'"
+#send-hook "~P" "push '<edit-cc>,bob.zhao@infomax.com.tw<return>'"
 
 ### use abook with mutt, already added in /etc/Muttrc.d/abook.rc
 set query_command       = "abook --mutt-query '%s'"
@@ -181,8 +184,8 @@ macro generic,index,pager \Ca "<shell-escape>abook<return>" "launch abook"
 # macro editor ";" \Ct
 
 # attachments
-macro attach W <save-entry><kill-line>/home/gawron/attachments/
-macro attach E <save-entry><kill-line>/home/gawron/attachments/<enter>
+macro attach W <save-entry><kill-line>~/MailAttachments/
+macro attach E <save-entry><kill-line>~/MailAttachments/<enter>
 mime_lookup application/octet-stream
 set mime_forward=yes
 set mime_forward_rest=yes
