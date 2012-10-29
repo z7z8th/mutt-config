@@ -6,6 +6,12 @@ if [ -e "$dbus_session_file" ]; then
   export DBUS_SESSION_BUS_ADDRESS DBUS_SESSION_BUS_PID
 fi
 
+prog_name=getmail
+
+getmail_ps_usr=`ps aux | grep "$prog_name" | grep -v "grep $prog_name" | head -n 1 | cut -d ' ' -f 1`
+[ "`whoami`" = "$getmail_ps_usr" ] && { notify-send -u normal "Another getmail is already in progress!"; exit 1; }
+
+
 getmail_log=`getmail -n 2>/dev/null`
 echo $getmail_log
 from_list=`echo $getmail_log | grep -Eo 'from <[[:alnum:]._-]+@[[:alnum:]._-]+>'`
