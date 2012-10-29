@@ -4,3 +4,4 @@ temp/*
 aliases
 *.bak
 /off
+/address-providers/.ldap-config
