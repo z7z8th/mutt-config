@@ -11,6 +11,7 @@
 
 macro index ,c "<change-folder>+Gmail/Inbox<return>" "change accounts"
 macro index D "<save-message>+Infomax/Trash<enter>" "move message to the trash"
+macro index d "<save-message>+Infomax/Trash<enter>" "move message to the trash"
 macro index S "<save-message>+Infomax/Spam<enter>"  "mark message as spam"
 
 # vim: ft=muttrc
