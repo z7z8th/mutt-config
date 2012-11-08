@@ -48,6 +48,7 @@ unset wait_key                                                    # don't show "
   set assumed_charset     = "utf-8:gb2312:big5:utf-8"
   set file_charset        = "utf-8:gb2312:big5:iso-8859-1"
   set sig_on_top          = no
+  set to_chars            = "-+TCfL"
 
 # enriched messages
 auto_view text/html                                               # view html automatically
@@ -57,10 +58,10 @@ alternative_order text/plain text/enriched text/html              # but save it 
   set alias_format        = "%4n %t %-20a %r"
   set date_format         = "%m/%d/%y at %I:%M%P"
   set forward_format      = "Fwd: %s"                             # format for subject when forwarding
-  set index_format        = "%3C %Z %[!%d/%m %H:%M] | %-15.15a -> %-15.15t | %s"
+  set index_format        = "%4C| %Z | %[!%d/%m %H:%M] | %-15.15a -> %-15.15t | %s"
   set quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
   set reply_regexp        = "^((([Rr][Ee]|答复)?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
-  set status_format       = "-%r- %v ────────────────┴────/ %f %m%?n? [+%n]?%?d? [-%d]?%?t? [*%t]? /%?p?───/ %p waiting to send /?─%>─(%P)───"
+  set status_format       = "-%r- %v ────────────────────{ %f %m%?n? [+%n]?%?d? [-%d]?%?t? [*%t]? }%?p?───[ %p waiting to send ]?─%>─(%P)───"
 
 # composing mail
   set askcc                                                       # always ask for CC:
@@ -146,6 +147,8 @@ bind pager /       search
 
 bind pager j       next-line
 bind pager k       previous-line
+bind pager \Cf     next-page
+bind pager \Cb     previous-page
 bind pager gg      top
 bind pager G       bottom
 
