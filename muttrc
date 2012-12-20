@@ -74,6 +74,8 @@ alternative_order text/plain text/enriched text/html              # but save it 
 unset reverse_name                                                # don't reply as who it was sent to (see alternates)
   set honor_followup_to   = yes
   set metoo               = yes                                   # add myself to the recipients list
+  set history_file        = ~/.mutt/history
+  set save_history        = 1000                                  # save # item histories
 
 # headers to show
 ignore *                                                          # ignore all headers
@@ -105,8 +107,11 @@ mailboxes +Infomax             \
           +Infomax/Trash       \
           +Infomax/Spam        \
           +Infomax/gerrit      \
+          +Infomax/mantis      \
           +Infomax/from-gmail  \
           +Infomax/Cron        \
+          +Infomax/Archive/2012     \
+          +Infomax/Archive/2013     \
 
 
 mailboxes +Thunderbird-im           \
@@ -145,8 +150,10 @@ bind pager i       exit
 bind pager q       toggle-quoted
 bind pager /       search
 
-bind pager j       next-line
-bind pager k       previous-line
+#bind pager j       next-line
+#bind pager k       previous-line
+macro pager j      "<next-line><next-line><next-line><next-line><next-line><next-line>"
+macro pager k      "<previous-line><previous-line><previous-line><previous-line><previous-line><previous-line>"
 bind pager \Cf     next-page
 bind pager \Cb     previous-page
 bind pager gg      top
@@ -154,8 +161,8 @@ bind pager G       bottom
 
 bind index gg      first-entry
 bind index G       last-entry
-bind index U       next-unread
 
+bind index,pager U next-unread
 bind index,pager R group-reply
 
 # sidebar is deleted, it's quite low performance
@@ -164,6 +171,8 @@ bind index,pager R group-reply
 #bind index,pager O sidebar-open
 
 # macros
+macro index \Cf "<pagedown>"
+macro index \Cb "<pageup>"
 macro index ,i "<change-folder>!<return>" "go to inbox"
 macro index ,p "<pipe-message>cat > ~/" "save message as"
 macro index ,z "<shell-escape>flock -xn /run/lock/$(whoami)-getmail-flock -c 'getmail -n'<return>" "sync IMAP"
