@@ -113,6 +113,7 @@ mailboxes +Infomax             \
           +Infomax/Archive/2012     \
           +Infomax/Archive/2013     \
 
+#mailboxes +imap://bob.zhao@xx.infomax.com.tw/      \
 
 mailboxes +Thunderbird-im           \
           +Thunderbird-im/Inbox     \
@@ -134,7 +135,7 @@ folder-hook Infomax/*     source ~/.mutt/infomax
 
 # collapse all thread in ML folders
 #folder-hook Gmail/(arch_lists|xmonad_list|web_devel|yesod) "exec collapse-all"
-folder-hook Infomax/(shlug|gerrit) "exec collapse-all"
+folder-hook Infomax/(shlug|Cron) "exec collapse-all"
 
 # alternate "me"s
 # alternates .*@pbrisbin\.com

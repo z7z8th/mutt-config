@@ -7,7 +7,7 @@
   set postponed     = "+Infomax/Draft"                      # where postponed msgs go
   set record        = "+Infomax/Sent"                       # where sent msgs go
   set copy          = "yes"                                 # actually save sent msgs
-  set query_command = "echo; /bin/run-parts -a '%s' ~/.mutt/address-providers/ 2>/dev/null | grep '@'"
+  set query_command = "echo; /bin/run-parts --arg '%s' --regex='^[0-9]{2}-.*' ~/.mutt/address-providers/ 2>/dev/null | grep '@'"
 
 macro index ,c "<change-folder>+Gmail/Inbox<return>" "change accounts"
 macro index D "<save-message>+Infomax/Trash<enter>" "move message to the trash"
