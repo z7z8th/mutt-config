@@ -102,8 +102,11 @@ subscribe shlug
 
 mailboxes +Infomax             \
           +Infomax/Inbox       \
-          +Infomax/Draft       \
           +Infomax/Sent        \
+          +Infomax/TODO        \
+          +Infomax/IF          \
+          +Infomax/LIF         \
+          +Infomax/Draft       \
           +Infomax/Trash       \
           +Infomax/Spam        \
           +Infomax/gerrit      \
@@ -175,6 +178,7 @@ bind index,pager R group-reply
 macro index \Cf "<pagedown>"
 macro index \Cb "<pageup>"
 macro index ,i "<change-folder>!<return>" "go to inbox"
+macro index ,m "<change-folder>+Infomax/mantis<return>" "go to inbox"
 macro index ,p "<pipe-message>cat > ~/" "save message as"
 macro index ,z "<shell-escape>flock -xn /run/lock/$(whoami)-getmail-flock -c 'getmail -n'<return>" "sync IMAP"
 macro index ,r "<tag-pattern>all<return><tag-prefix><clear-flag>N<untag-pattern>all<return>" "mark all as read"

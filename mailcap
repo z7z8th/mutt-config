@@ -1,5 +1,5 @@
 application/octet-stream ; pcmanfm %s                                      ; copiousoutput
-text/html                ; /usr/bin/w3m -dump %s ; nametemplate=%s.html    ; copiousoutput
+text/html                ; /usr/bin/w3m -dump -T text/html %s ; nametemplate=%s.html    ; copiousoutput
 application/pdf          ; /usr/bin/evince %s                              ; copiousoutput
 image/*                  ; /usr/bin/mirage %s                              ; copiousoutput
 audio/*                  ; /usr/bin/smplayer %s                            ; copiousoutput
