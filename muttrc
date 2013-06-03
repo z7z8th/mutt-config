@@ -106,9 +106,9 @@ mailboxes +Infomax             \
           +Infomax/TODO        \
           +Infomax/IF          \
           +Infomax/LIF         \
-          +Infomax/Draft       \
+          +Infomax/Drafts      \
           +Infomax/Trash       \
-          +Infomax/Spam        \
+          +Infomax/Junk        \
           +Infomax/gerrit      \
           +Infomax/mantis      \
           +Infomax/from-gmail  \
@@ -127,10 +127,31 @@ mailboxes +Thunderbird-im           \
 mailboxes /var/mail/z7z8th       \
           ~/mbox                 \
 
+
+# mailboxes imaps://ms.infomax.com.tw/INBOX
+# mailboxes imaps://ms.infomax.com.tw/Sent
+# mailboxes imaps://ms.infomax.com.tw/TODO
+# mailboxes imaps://ms.infomax.com.tw/IF
+# mailboxes imaps://ms.infomax.com.tw/LIF
+# mailboxes imaps://ms.infomax.com.tw/Drafts
+# mailboxes imaps://ms.infomax.com.tw/Trash
+# mailboxes imaps://ms.infomax.com.tw/Junk
+# mailboxes imaps://ms.infomax.com.tw/gerrit
+# mailboxes imaps://ms.infomax.com.tw/mantis
+# mailboxes imaps://ms.infomax.com.tw/from-gmail
+# mailboxes imaps://ms.infomax.com.tw/Archive/2012
+# mailboxes imaps://ms.infomax.com.tw/Archive/2013
+# mailboxes imaps://ms.infomax.com.tw/dotProject
+
 source $alias_file                                                # required for functionality
 #source ~/.mutt/colors
 # source ~/.mutt/gmail
 source ~/.mutt/infomax
+
+##### IMAP Setting #####
+set ssl_verify_dates = no
+set certificate_file = ~/.mutt/certs
+# source ~/.mutt/.imap-config
 
 # override with account specific folder-hooks
 # folder-hook Gmail/*      source ~/.mutt/gmail
@@ -222,6 +243,7 @@ set rfc2047_parameters
   set read_inc = 100
   set time_inc = 250
   set header_cache        = "~/Mail/cache/"
+  set message_cachedir    = "~/Mail/cache/"
 unset header_cache_compress
 
 # vim: ft=muttrc
